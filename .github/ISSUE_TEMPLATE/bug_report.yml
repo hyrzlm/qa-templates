@@ -1,0 +1,69 @@
+name: Bug report
+description: Something doesn't work the way it should
+title: "Bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: A good report lets someone reproduce the bug without asking you any questions.
+  - type: input
+    id: environment
+    attributes:
+      label: Environment and build
+      placeholder: stage, build 2026.10.09-1
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / device
+      placeholder: Chrome 141 on Windows 11
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Quote error messages exactly.
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      options:
+        - Every time
+        - Intermittent
+        - Happened once
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical (data loss, security, core flow blocked)
+        - Major (core flow broken for some users)
+        - Minor (workaround exists)
+        - Trivial (cosmetic)
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, recordings, console errors, request and status code, logs.
